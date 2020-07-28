@@ -1,13 +1,14 @@
 $(document).ready(function() {
   // listen for save button clicks
 
-  $(".saveBtn").on("click", function() {
+  $(".saveBtn").on("click", function(event) {
     // get nearby values
-    var value = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
+    event.preventDefault();
+    const value = $(this).siblings(".description").val();
+    const time = $(this).parent().attr("id");
 
-    console.log('value:', value);
-    console.log('time:', time);
+    console.log("value:", value);
+    console.log("time:", time);
 
     // save the value in localStorage as time
     localStorage.setItem("value", "time");
@@ -16,13 +17,13 @@ $(document).ready(function() {
 
   function hourUpdater() {
     // get current number of hours
-    var currentHour = moment().hours();
-    console.log('current hour:', currentHour);
+    const currentHour = moment().hours();
+    console.log("current hour:", currentHour);
 
     // loop over time blocks
     $(".time-block").each(function() {
-      var blockHour = parseInt($(this).attr("id").split("-")[1]);
-      var textArea = $("textarea");
+      const blockHour = parseInt($(this).attr("id").split("-")[1]);
+      const textArea = $("textarea");
 
       console.log("block hour:", blockHour);
 
@@ -51,10 +52,14 @@ $(document).ready(function() {
 
   hourUpdater();
 
+  const interval = setInterval(function hourUpdater() {
+    
+  }, 15000);
+ 
+ clearInterval(interval); 
   // set up interval to check if current time needs to be updated
   // which means execute hourUpdater function every 15 seconds
 
-  localStorage.setItem("value", "time");
   function getData() {
     $("textarea").text(localStorage.getItem(value));
   };
