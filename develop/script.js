@@ -98,14 +98,6 @@ $(document).ready(function() {
     $("#hour-17").children("textarea").text(localStorage.getItem("hour-17"));
   }
 
-  // $(".time-block").each(function() {
-  //   var tempTime = localStorage.getItem($(this).attr("id"));
-  //   if(localStorage.getItem(tempTime) !== null) {
-  //     $("#" + tempTime).children("textarea").text(localStorage.getItem(tempTime));
-  //     console.log(tempTime);
-  //     console.log(localStorage.getItem(tempTime));
-  //   }
-  // });
   // load any saved data from localStorage
 
 
