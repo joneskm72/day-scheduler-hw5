@@ -12,9 +12,9 @@ I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
 ```
 
-<img src="assets/planner" width="400">
+<img src="assets/planner.png" width="400">
 
-<img src="assets/planner2" width="400">
+<img src="assets/planner2.png" width="400">
 
 ## Technologies Used
 
